@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>五邑大学自动评教</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 300px;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Microsoft YaHei", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .header .subtitle {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+
+      .status-card {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      .status-card .label {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-bottom: 4px;
+      }
+
+      .status-card .value {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn-primary {
+        background: white;
+        color: #667eea;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none !important;
+      }
+
+      .info {
+        font-size: 11px;
+        opacity: 0.7;
+        text-align: center;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      .instructions {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 16px;
+      }
+
+      .instructions h3 {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+
+      .instructions ol {
+        font-size: 12px;
+        padding-left: 16px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🎓 五邑大学自动评教</h1>
+      <p class="subtitle">一键完成课程评教</p>
+    </div>
+
+    <div class="status-card">
+      <div class="label">当前状态</div>
+      <div class="value" id="status">等待操作</div>
+    </div>
+
+    <div class="instructions">
+      <h3>📋 使用说明</h3>
+      <ol>
+        <li>打开教务系统评教页面</li>
+        <li>进入评教详情页（有滑块的页面）</li>
+        <li>点击下方"一键满分评教"按钮</li>
+      </ol>
+    </div>
+
+    <button class="btn btn-primary" id="runBtn">
+      <span>⚡</span>
+      <span>一键满分评教</span>
+    </button>
+
+    <button class="btn btn-secondary" id="detectBtn">
+      <span>🔍</span>
+      <span>检测页面滑块</span>
+    </button>
+
+    <p class="info">
+      插件会自动将所有评分滑块设为10分<br />
+      并点击提交按钮完成评教
+    </p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
